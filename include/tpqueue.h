@@ -1,15 +1,21 @@
 // Copyright 2022 NNTU-CS
 #ifndef INCLUDE_TPQUEUE_H_
 #define INCLUDE_TPQUEUE_H_
+struct SYM {
+  char ch;
+  int prior;
+};
 template<typename T>
 class TPQueue {
+
 private:
     struct Node {
         SYM data;
         Node* next;
-        Node(const SYM& sym) : data(sym), next(nullptr) {}
+        explicit Node(const SYM& sym) : data(sym), next(nullptr) {}
     };
     Node* head;
+
 public:
     TPQueue() : head(nullptr) {}
     ~TPQueue() {
@@ -40,9 +46,5 @@ public:
         delete temp;
         return result;
     }
-};
-struct SYM {
-  char ch;
-  int prior;
 };
 #endif  // INCLUDE_TPQUEUE_H_
