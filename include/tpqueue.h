@@ -7,8 +7,7 @@ struct SYM {
 };
 template<typename T>
 class TPQueue {
-
-private:
+ private:
     struct Node {
         SYM data;
         Node* next;
@@ -16,7 +15,7 @@ private:
     };
     Node* head;
 
-public:
+ public:
     TPQueue() : head(nullptr) {}
     ~TPQueue() {
         while (head) {
